@@ -1,5 +1,5 @@
 // ============================================
-// RTDBshortened.js
+// FB_RTDB_Shortened.js
 // Firebase Realtime Database, shortened.
 // One function per job.
 // ============================================
@@ -15,7 +15,6 @@ import {
   remove,
   onValue,
   query,
-  orderByChild,
   limitToLast,
   serverTimestamp
 } from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js';
@@ -81,7 +80,6 @@ window.RTDB_Update = async function(path, data) {
 
 // ──────── INCREMENT ────────
 // await RTDB_Inc("counters/likes", 1)
-// → atomic +1. Uses transaction-free increment via update.
 window.RTDB_Inc = async function(path, amount) {
   if (!RTDB.ready) throw new Error("RTDB not initialized — call RTDB_Init first");
   const amt = Number(amount) || 1;
