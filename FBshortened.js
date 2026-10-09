@@ -77,3 +77,21 @@ window.FBDelete = async function(col, id) {
   if (!FB.ready) throw new Error("FB not initialized — call FBInit first");
   await deleteDoc(doc(FB.db, col, id));
 };
+
+
+// ──────── READ SORTED ────────
+// await FBGetSorted("collection", "field", "asc"|"desc", count)
+// → returns [{ id, ...fields }, ...] sorted by field
+window.FBGetSorted = async function(col, field, direction, n) {
+  if (!FB.ready) throw new Error("FB not initialized — call FBInit first");
+  if (!field) throw new Error("FBGetSorted: missing field name");
+
+  const dir = (direction === "asc") ? "asc" : "desc";
+  let q = query(collection(FB.db, col), orderBy(field, dir));
+  if (n) q = query(q, limit(n));
+
+  const snap = await getDocs(q);
+  const out = [];
+  snap.forEach(d => out.push({ id: d.id, ...d.data() }));
+  return out;
+};
