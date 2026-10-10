@@ -15,3 +15,6 @@ JavaScript extensions more useful and short commands(JavaScript_Extension)
 
 # JS_LE
 newer and better version of JS_E(JavaScript_Long Extension)
+
+# SBshortened
+Supabase but with shortened features, making it easier to write code and make websites.(Supabase shortened)
