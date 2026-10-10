@@ -7,7 +7,7 @@ What i have for you:
 # FBShortened
 Firebase but with shortened features, making it easier to write code and make websites.(Firebase shortened)
 
-# RTDBShortened
+# FB_RTDB_Shortened
 Realtime database with shortened features, making it easier to write code and make websites.(Realtime Database shortened)
 
 # JS_E
